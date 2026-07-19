@@ -127,6 +127,17 @@
       font-size: 0.8rem;
       opacity: 0.6;
       text-align: center;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    footer .footer-logo {
+      width: 28px;
+      height: 28px;
+      object-fit: contain;
     }
 
     footer a {
@@ -152,6 +163,7 @@
   </main>
 
   <footer>
+    <img class="footer-logo" src="images/logo-01.png" alt="capybooboo.com logo">
     <p>&copy; <span id="year"></span> capybooboo.com &middot; <a href="privacy.html">Privacy</a></p>
   </footer>
 
@@ -168,10 +180,14 @@
 
     const week = weeksSinceEpoch();
     const photo = PHOTOS[week % PHOTOS.length];
-    const quote = QUOTES[week % QUOTES.length];
+
+    // Only pick a quote that's tagged for this photo's scene (or "any"), so
+    // e.g. a water quote never lands on a dry-land photo. See quotes.js.
+    const eligibleQuotes = QUOTES.filter(q => q.scenes.includes('any') || q.scenes.includes(photo.scene));
+    const quote = eligibleQuotes[week % eligibleQuotes.length];
 
     document.getElementById('capybara-photo').src = photo.src;
-    document.getElementById('capybara-quote').textContent = '"' + quote + '"';
+    document.getElementById('capybara-quote').textContent = '"' + quote.text + '"';
     document.getElementById('capybara-credit').textContent =
       photo.source === 'mine' ? '' : 'Photo: ' + photo.credit;
     document.getElementById('year').textContent = new Date().getFullYear();

@@ -1,11 +1,17 @@
 // capybooboo.com — photo pool
 //
-// Each entry needs: src (image path or URL), credit (who to thank), source ("stock" or "mine")
+// Each entry needs: src (image path or URL), credit (who to thank), source ("stock" or "mine"),
+// scene ("water" if the capybara is in/right next to visible water, otherwise "land")
+//
+// The scene tag exists so the weekly quote (see quotes.js) never contradicts what's
+// actually in the photo — e.g. no "sitting in warm water" quote on a photo where
+// the capybara is clearly on dry dirt.
 //
 // TO ADD YOUR OWN PHOTO LATER:
 // 1. Drop the image file into photos/mine/  (e.g. photos/mine/my-capybara.jpg)
 // 2. Add one line below:
-//      { src: "photos/mine/my-capybara.jpg", credit: "Edward", source: "mine" },
+//      { src: "photos/mine/my-capybara.jpg", credit: "Edward", source: "mine", scene: "land" },
+//    (use scene: "water" if there's visible water in the shot)
 // That's it — it joins the weekly rotation automatically, no other changes needed.
 //
 // Starter photos are hotlinked from Pexels (free license, no attribution required,
@@ -16,41 +22,49 @@ const PHOTOS = [
   {
     src: "https://images.pexels.com/photos/21348644/pexels-photo-21348644.jpeg?auto=compress&cs=tinysrgb&w=1200",
     credit: "Kemal Berkay Dogan / Pexels",
-    source: "stock"
+    source: "stock",
+    scene: "land"
   },
   {
     src: "https://images.pexels.com/photos/38238673/pexels-photo-38238673.jpeg?auto=compress&cs=tinysrgb&w=1200",
     credit: "Marian Havenga / Pexels",
-    source: "stock"
+    source: "stock",
+    scene: "land"
   },
   {
     src: "https://images.pexels.com/photos/19289108/pexels-photo-19289108.jpeg?auto=compress&cs=tinysrgb&w=1200",
     credit: "Saplak / Pexels",
-    source: "stock"
+    source: "stock",
+    scene: "water"
   },
   {
     src: "https://images.pexels.com/photos/4720899/pexels-photo-4720899.jpeg?auto=compress&cs=tinysrgb&w=1200",
     credit: "Isaac Cortes / Pexels",
-    source: "stock"
+    source: "stock",
+    scene: "land"
   },
   {
     src: "https://images.pexels.com/photos/6477268/pexels-photo-6477268.jpeg?auto=compress&cs=tinysrgb&w=1200",
     credit: "Rutpratheep / Pexels",
-    source: "stock"
+    source: "stock",
+    scene: "water"
   },
   {
     src: "https://images.pexels.com/photos/36504419/pexels-photo-36504419.jpeg?auto=compress&cs=tinysrgb&w=1200",
     credit: "Jean-Paul Wettstein / Pexels",
-    source: "stock"
+    source: "stock",
+    scene: "land"
   },
   {
     src: "https://images.pexels.com/photos/33047305/pexels-photo-33047305.jpeg?auto=compress&cs=tinysrgb&w=1200",
     credit: "railgunbreaker / Pexels",
-    source: "stock"
+    source: "stock",
+    scene: "water"
   },
   {
     src: "https://images.pexels.com/photos/26584628/pexels-photo-26584628.jpeg?auto=compress&cs=tinysrgb&w=1200",
     credit: "Luana / Pexels",
-    source: "stock"
+    source: "stock",
+    scene: "land"
   }
 ];
