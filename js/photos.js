@@ -1,5 +1,10 @@
 // capybooboo.com — photo pool
 //
+// IMPORTANT: whenever this file changes, bump the "?v=" query string on its
+// <script> tag in index.html (e.g. v=2 -> v=3). Browsers cache this file for
+// up to 4 hours (Cloudflare's Browser Cache TTL); without a version bump,
+// returning visitors keep serving the old cached copy until it expires.
+//
 // Each entry needs: src (image path or URL), credit (who to thank), source ("stock" or "mine"),
 // scene ("water" if the capybara is in/right next to visible water, otherwise "land")
 //

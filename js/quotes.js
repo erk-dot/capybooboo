@@ -1,5 +1,10 @@
 // capybooboo.com — quote pool
 //
+// IMPORTANT: whenever this file changes, bump the "?v=" query string on its
+// <script> tag in index.html (e.g. v=2 -> v=3). Browsers cache this file for
+// up to 4 hours (Cloudflare's Browser Cache TTL); without a version bump,
+// returning visitors keep serving the old cached copy until it expires.
+//
 // Silly / funny "inspirational" quotes. Each is tagged with which photo
 // scene(s) it's allowed to pair with, so the weekly quote never contradicts
 // what's actually in the photo (see the "scene" tag in photos.js).
