@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>capybooboo.com — Your Weekly Capybara</title>
-  <meta name="description" content="A random capybara photo and a silly inspirational quote, refreshed every week. That's it. That's the site.">
+  <title>About — capybooboo.com</title>
+  <meta name="description" content="The story behind capybooboo.com — a tiny weekly dose of capybara photos and nonsense wisdom.">
   <link rel="icon" type="image/png" href="images/logo-01.png">
 
   <!-- Google tag (gtag.js) -->
@@ -13,7 +13,6 @@
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-M07224YH8C');
   </script>
   <!-- Google AdSense -->
@@ -38,7 +37,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: center;
       padding: 24px;
     }
 
@@ -93,40 +91,35 @@
       box-shadow: 0 8px 24px rgba(107, 74, 47, 0.15);
       max-width: 560px;
       width: 100%;
-      overflow: hidden;
+      padding: 32px 36px 36px;
+      line-height: 1.6;
     }
 
-    .card img {
-      width: 100%;
-      height: 360px;
-      object-fit: cover;
-      display: block;
-      background: var(--tan);
+    .card h2 {
+      color: var(--green);
+      margin-top: 24px;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
     }
 
-    .card .quote {
-      padding: 28px 32px;
-      text-align: center;
-    }
+    .card h2:first-child { margin-top: 0; }
 
-    .card .quote p {
-      font-size: 1.25rem;
-      font-style: italic;
-      line-height: 1.5;
-    }
+    .card p { margin-bottom: 12px; }
 
-    .card .credit {
-      padding: 0 32px 20px;
-      text-align: center;
-      font-size: 0.75rem;
-      opacity: 0.5;
-    }
+    .card a { color: var(--brown); }
 
     footer {
       margin-top: 28px;
       font-size: 0.8rem;
       opacity: 0.6;
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+
+    footer .footer-line {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -140,9 +133,7 @@
       object-fit: contain;
     }
 
-    footer a {
-      color: var(--brown);
-    }
+    footer a { color: var(--brown); }
   </style>
 </head>
 <body>
@@ -155,41 +146,35 @@
   </header>
 
   <main class="card">
-    <img id="capybara-photo" src="" alt="This week's capybara">
-    <div class="quote">
-      <p id="capybara-quote">Loading wisdom...</p>
-    </div>
-    <div class="credit" id="capybara-credit"></div>
+    <h2>What is this?</h2>
+    <p>capybooboo.com is a very small website with one job: show you a capybara and say something vaguely encouraging next to it. Every week the photo and the quote both change, so there's always something new to see — even if "new" just means a different capybara looking unbothered by the state of the world.</p>
+
+    <h2>Why capybaras?</h2>
+    <p>Because they're about the calmest animal on Earth, and the internet could stand to borrow some of that energy. They float, they nap in piles, they ride around on cattle like it's nothing. There's probably a lesson in there. This site does not claim to know what it is.</p>
+
+    <h2>How it works</h2>
+    <p>No editor, no schedule, no maintenance. A small script on the homepage picks a photo and a matching quote based on the current week, so the page updates itself automatically — land-photo capybaras get land-appropriate quotes, water-photo capybaras get water-appropriate quotes, and everyone gets on with their day.</p>
+
+    <h2>Photos &amp; credit</h2>
+    <p>Starter photos are sourced under the <a href="https://www.pexels.com/license/" target="_blank" rel="noopener">Pexels License</a> (free to use, no attribution required) with photographer credit given anyway, because it's the polite thing to do. A few photos are the site owner's own.</p>
+
+    <h2>Who runs this?</h2>
+    <p>One person, for fun, alongside a couple of other small hobby sites. If something's broken or you just want to say hi, reach out at <a href="mailto:info@capybooboo.com">info@capybooboo.com</a>.</p>
   </main>
 
   <footer>
-    <img class="footer-logo" src="images/logo-01.png" alt="capybooboo.com logo">
-    <p>&copy; <span id="year"></span> capybooboo.com &middot; <a href="about.html">About</a> &middot; <a href="privacy.html">Privacy</a></p>
+    <div class="footer-line">
+      <img class="footer-logo" src="images/logo-01.png" alt="capybooboo.com logo">
+      <p>&copy; <span id="year"></span> capybooboo.com</p>
+    </div>
+    <div class="footer-line">
+      <a href="index.html">&larr; Back to capybooboo.com</a>
+      <span>&middot;</span>
+      <a href="privacy.html">Privacy</a>
+    </div>
   </footer>
 
-  <script src="js/photos.js?v=2"></script>
-  <script src="js/quotes.js?v=2"></script>
   <script>
-    // Weeks since a fixed epoch (Jan 1, 2020) — used to pick this week's photo and quote.
-    // Independent indices so the pairing varies over time instead of locking in step.
-    function weeksSinceEpoch() {
-      const epoch = Date.UTC(2020, 0, 1);
-      const now = Date.now();
-      return Math.floor((now - epoch) / (7 * 24 * 60 * 60 * 1000));
-    }
-
-    const week = weeksSinceEpoch();
-    const photo = PHOTOS[week % PHOTOS.length];
-
-    // Only pick a quote that's tagged for this photo's scene (or "any"), so
-    // e.g. a water quote never lands on a dry-land photo. See quotes.js.
-    const eligibleQuotes = QUOTES.filter(q => q.scenes.includes('any') || q.scenes.includes(photo.scene));
-    const quote = eligibleQuotes[week % eligibleQuotes.length];
-
-    document.getElementById('capybara-photo').src = photo.src;
-    document.getElementById('capybara-quote').textContent = '"' + quote.text + '"';
-    document.getElementById('capybara-credit').textContent =
-      photo.source === 'mine' ? '' : 'Photo: ' + photo.credit;
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 
