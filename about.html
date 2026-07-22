@@ -108,6 +108,15 @@
 
     .card a { color: var(--brown); }
 
+    a.banner {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: opacity 0.15s ease;
+    }
+
+    a.banner:hover { opacity: 0.85; }
+
     footer {
       margin-top: 28px;
       font-size: 0.8rem;
@@ -138,12 +147,12 @@
 </head>
 <body>
 
-  <header class="banner">
+  <a href="index.html" class="banner" aria-label="Back to capybooboo.com home">
     <div class="banner-text">
       <h1>capybooboo.com</h1>
       <p>A new capybara and a new bit of nonsense wisdom, every week.</p>
     </div>
-  </header>
+  </a>
 
   <main class="card">
     <h2>What is this?</h2>
