@@ -89,5 +89,11 @@ const PHOTOS = [
     credit: "Edward",
     source: "mine",
     scene: "land"
+  },
+  {
+    src: "photos/mine/capybara-face-closeup-dirt.jpg",
+    credit: "Edward",
+    source: "mine",
+    scene: "land"
   }
 ];
