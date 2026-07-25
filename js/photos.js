@@ -71,5 +71,23 @@ const PHOTOS = [
     credit: "Luana / Pexels",
     source: "stock",
     scene: "land"
+  },
+  {
+    src: "photos/mine/capybara-garden-enclosure-mulch.jpg",
+    credit: "Edward",
+    source: "mine",
+    scene: "land"
+  },
+  {
+    src: "photos/mine/capybara-swimming-pond-closeup.jpg",
+    credit: "Edward",
+    source: "mine",
+    scene: "water"
+  },
+  {
+    src: "photos/mine/capybara-grazing-fence-post.jpg",
+    credit: "Edward",
+    source: "mine",
+    scene: "land"
   }
 ];
