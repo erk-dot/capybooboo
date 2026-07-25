@@ -9,3 +9,6 @@ token.json
 photos/clean/
 photos/originals/
 photos/for-review/
+
+# Photo pipeline approval sheet — regenerated per batch, not a site asset
+photos/review-sheet.html
