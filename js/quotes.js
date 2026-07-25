@@ -28,5 +28,17 @@ const QUOTES = [
   { text: "You are 100% capable of doing absolutely nothing today, and that's beautiful.", scenes: ["any"] },
   { text: "A capybara has never once had a bad day. Be the capybara.", scenes: ["any"] },
   { text: "Whatever it is, it can probably wait until after this nap.", scenes: ["any"] },
-  { text: "Peace is not the absence of chaos. Peace is a capybara sitting in the middle of it.", scenes: ["any"] }
+  { text: "Peace is not the absence of chaos. Peace is a capybara sitting in the middle of it.", scenes: ["any"] },
+  { text: "A capybara has never once rushed a sunset.", scenes: ["any"] },
+  { text: "Low heart rate, high vibes.", scenes: ["any"] },
+  { text: "The capybara's therapist retired early. There was nothing to do.", scenes: ["any"] },
+  { text: "Be soft. Be slow. Let the ducks sit on you if they want.", scenes: ["any"] },
+  { text: "Water doesn't rush. Neither do I.", scenes: ["water"] },
+  { text: "Some are born calm. Others just move to the pond.", scenes: ["water"] },
+  { text: "The capybara has read zero self-help books and needs none.", scenes: ["any"] },
+  { text: "Grass is grass. Eat it slowly. Savor the mundane.", scenes: ["land"] },
+  { text: "You don't have to conquer today. You could just lie in the sun instead.", scenes: ["land"] },
+  { text: "Everyone's invited to sit on the capybara. That's the whole philosophy.", scenes: ["any"] },
+  { text: "Nothing has ever gone wrong while floating.", scenes: ["water"] },
+  { text: "Deadlines are a human invention. The capybara was not consulted.", scenes: ["any"] }
 ];
