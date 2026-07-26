@@ -179,7 +179,17 @@
     }
 
     const week = weeksSinceEpoch();
-    const photo = PHOTOS[week % PHOTOS.length];
+    let photo = PHOTOS[week % PHOTOS.length];
+
+    // TEMPORARY (added 2026-07-26): force this one week to show Edward's
+    // water photo instead of the normal rotation pick. Guarded by the exact
+    // week number, so this auto-expires and falls back to normal rotation
+    // as soon as the week rolls over — no manual revert needed.
+    const FORCE_WEEK = 342;
+    if (week === FORCE_WEEK) {
+      const forced = PHOTOS.find(p => p.src === "photos/mine/capybara-swimming-pond-closeup.jpg");
+      if (forced) photo = forced;
+    }
 
     // Only pick a quote that's tagged for this photo's scene (or "any"), so
     // e.g. a water quote never lands on a dry-land photo. See quotes.js.
