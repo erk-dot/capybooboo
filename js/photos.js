@@ -107,5 +107,17 @@ const PHOTOS = [
     credit: "Edward",
     source: "mine",
     scene: "land"
+  },
+  {
+    src: "photos/mine/capybara-looking-up-dirt.jpg",
+    credit: "Edward",
+    source: "mine",
+    scene: "land"
+  },
+  {
+    src: "photos/mine/capybara-face-tilted-up.jpg",
+    credit: "Edward",
+    source: "mine",
+    scene: "land"
   }
 ];
