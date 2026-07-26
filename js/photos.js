@@ -95,5 +95,17 @@ const PHOTOS = [
     credit: "Edward",
     source: "mine",
     scene: "land"
+  },
+  {
+    src: "photos/mine/capybara-eating-carrots-grass.jpg",
+    credit: "Edward",
+    source: "mine",
+    scene: "land"
+  },
+  {
+    src: "photos/mine/capybara-eating-carrot-closeup.jpg",
+    credit: "Edward",
+    source: "mine",
+    scene: "land"
   }
 ];
