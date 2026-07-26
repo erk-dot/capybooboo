@@ -19,6 +19,61 @@
     h2 { margin-top: 32px; margin-bottom: 8px; font-size: 1.1rem; }
     a { color: #6b4a2f; }
     .updated { opacity: 0.6; font-size: 0.85rem; margin-bottom: 32px; }
+
+    .banner {
+      position: relative;
+      width: 100%;
+      max-width: 560px;
+      aspect-ratio: 3 / 1;
+      border-radius: 18px;
+      overflow: hidden;
+      background-image: url('images/banner-01.png');
+      background-size: cover;
+      background-position: left center;
+      box-shadow: 0 8px 24px rgba(107, 74, 47, 0.15);
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0 28px;
+      margin: 0 auto 28px;
+    }
+
+    .banner .banner-text {
+      text-align: right;
+      max-width: 52%;
+    }
+
+    .banner h1 {
+      font-size: 1.4rem;
+      color: #5a7052;
+      line-height: 1.1;
+      white-space: nowrap;
+      margin-bottom: 0;
+    }
+
+    .banner p {
+      font-size: 0.72rem;
+      color: #6b4a2f;
+      opacity: 0.75;
+      margin-top: 4px;
+      line-height: 1.3;
+    }
+
+    a.banner {
+      text-decoration: none;
+      color: inherit;
+      cursor: pointer;
+      transition: opacity 0.15s ease;
+    }
+
+    a.banner:hover { opacity: 0.85; }
+
+    @media (max-width: 420px) {
+      .banner h1 { font-size: 0.95rem; }
+      .banner p { font-size: 0.6rem; }
+      .banner { padding: 0 12px; }
+      .banner .banner-text { max-width: 58%; }
+    }
     footer {
       margin-top: 48px;
       font-size: 0.85rem;
@@ -43,6 +98,13 @@
   </style>
 </head>
 <body>
+
+  <a href="index.html" class="banner" aria-label="Back to capybooboo.com home">
+    <div class="banner-text">
+      <h1>capybooboo.com</h1>
+      <p>A new capybara and a new bit of nonsense wisdom, every week.</p>
+    </div>
+  </a>
 
   <h1>Privacy Policy</h1>
   <p class="updated">Last updated: July 2026</p>
